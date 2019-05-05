@@ -8,29 +8,57 @@ const RIGHT_ARROW = 39;
 const SPACE = 32;
 const ENTER = 13;
 
+const Screens = {
+  MAIN: "main-screen",
+  PLAY: "play-screen",
+  CONTROLS: "controls-screen"
+};
+
+var actualScreen = Screens.MAIN;
+
+
+goToSreeen(actualScreen);
+
 document.onkeydown = function(e) {
   e = e || window.event;
 
-  switch (e.keyCode) {
-    case UP_ARROW:
-      console.log("UP");
-      changeMainMenu(-1);
-      break;
-    case DOWN_ARROW:
-      console.log("DOWN");
-      changeMainMenu(1);
-      break;
+  if (actualScreen == Screens.MAIN) {
+    switch (e.keyCode) {
+      case UP_ARROW:
+        changeMainMenu(-1);
+        break;
+      case DOWN_ARROW:
+        changeMainMenu(1);
+        break;
+      case ENTER:
+        goToSreeen(getPageForIndexMenu(selectedItem));
+        break;
+    }
   }
 };
+
+// MAIN Screen Utils
 
 function changeMainMenu(delta) {
   selectedItem += delta;
   if (selectedItem < 0) selectedItem = 0;
   if (selectedItem == menuLengt) selectedItem = menuLengt - 1;
 
-  $('.selected-item').removeClass('selected-item');
-  $('#menu li').each(function (index){
-      if(index == selectedItem) $(this).addClass('selected-item');
+  $(".selected-item").removeClass("selected-item");
+  $("#menu li").each(function(index) {
+    if (index == selectedItem) $(this).addClass("selected-item");
   });
-  
+}
+
+function goToSreeen(screenToShow) {
+  Object.values(Screens).forEach(screen => {
+    $(`#${screen}`).hide();
+  });
+
+  $(`#${screenToShow}`).show();
+}
+
+function getPageForIndexMenu(index){
+    if(index == 0) return Screens.PLAY;
+    if(index == 1) return Screens.CONTROLS;
 }
