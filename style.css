@@ -10,6 +10,8 @@
 body {
   background-color: #fff;
 }
+
+/* PANTALLA PRINCIPAL */
 .container-mid {
   text-align: center;
 }
@@ -53,4 +55,14 @@ body {
   font-family: "OnOff";
   opacity: 0.1;
   color: #333;
+}
+
+/* PANTALLA CONTROLES */
+
+#controls-screen{
+    text-align: center;
+}
+#controls{
+    width: 80vw;
+    margin-top: 5em;
 }

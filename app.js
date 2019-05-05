@@ -16,7 +16,6 @@ const Screens = {
 
 var actualScreen = Screens.MAIN;
 
-
 goToSreeen(actualScreen);
 
 document.onkeydown = function(e) {
@@ -34,6 +33,12 @@ document.onkeydown = function(e) {
         goToSreeen(getPageForIndexMenu(selectedItem));
         break;
     }
+  } else if (actualScreen == Screens.CONTROLS) {
+    switch (e.keyCode) {
+      case ENTER:
+        goToSreeen(Screens.MAIN);
+        break;
+    }
   }
 };
 
@@ -44,7 +49,7 @@ function changeMainMenu(delta) {
   if (selectedItem < 0) selectedItem = 0;
   if (selectedItem == menuLengt) selectedItem = menuLengt - 1;
 
-  $(".selected-item").removeClass("selected-item");
+  $("#main-screen .selected-item").removeClass("selected-item");
   $("#menu li").each(function(index) {
     if (index == selectedItem) $(this).addClass("selected-item");
   });
@@ -56,9 +61,12 @@ function goToSreeen(screenToShow) {
   });
 
   $(`#${screenToShow}`).show();
+
+  actualScreen = screenToShow;
+  console.log(actualScreen);
 }
 
-function getPageForIndexMenu(index){
-    if(index == 0) return Screens.PLAY;
-    if(index == 1) return Screens.CONTROLS;
+function getPageForIndexMenu(index) {
+  if (index == 0) return Screens.PLAY;
+  if (index == 1) return Screens.CONTROLS;
 }
