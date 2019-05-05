@@ -1,0 +1,56 @@
+/*
+    Fuentes
+*/
+
+@font-face {
+  font-family: "OnOff";
+  src: url("./fonts/onoff.otf");
+}
+
+body {
+  background-color: #fff;
+}
+.container-mid {
+  text-align: center;
+}
+#titulo {
+  font-family: "OnOff";
+  font-size: 7em;
+  margin-top: 1.5em;
+  color: #333;
+}
+#titulo span {
+  opacity: 0.1;
+}
+
+#menu {
+  margin-bottom: 1em;
+}
+
+#menu li {
+  list-style-type: none;
+  font-family: "OnOff";
+  font-size: 1.7em;
+  opacity: 0.1;
+  color: #333;
+  margin-bottom: 1em;
+}
+
+.star-menu {
+  margin: 0px 10px;
+  vertical-align: middle;
+  display: none;
+}
+
+#menu .selected-item .star-menu {
+  display: inline-block;
+}
+.selected-item {
+  color: #333 !important;
+  opacity: 1 !important;
+}
+#credits {
+  font-family: "OnOff";
+  opacity: 0.1;
+  color: #333;
+}

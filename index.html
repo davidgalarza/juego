@@ -1,12 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
     <title>Juego Perron</title>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="container-mid">
+      <h1 id="titulo"><span>EL</span> CUYITO</h1>
+    </div>
+    <div class="container-mid">
+      <ul id="menu">
+        <li class="selected-item">
+          <span>
+            <img src="./img/star.svg" class="star-menu" />
+          </span>
+          EMPEZAR JUEGO
+          <span>
+            <img src="./img/star.svg" class="star-menu" />
+          </span>
+        </li>
+        <li>
+          <span>
+            <img src="./img/star.svg" class="star-menu" />
+          </span>
+          CONTROLES
+          <span>
+            <img src="./img/star.svg" class="star-menu" />
+          </span>
+        </li>
+      </ul>
 
-</body>
+      <footer>
+        <h2 id="credits">UTA 2019 • DAVID GALARZA</h2>
+      </footer>
+    </div>
+
+    <!--
+        Reproducir audio principal
+    -->
+    <iframe
+      src="./audio/primary_song.m4a"
+      allow="autoplay"
+      id="audio"
+      style="display:none"
+    ></iframe>
+    <audio id="player" autoplay loop>
+      <source src="./audio/primary_song.m4a" type="audio/m4a" />
+    </audio>
+    <!--
+        Script de Javascript
+    -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./app.js"></script>
+  </body>
 </html>
